@@ -25,7 +25,7 @@ Recorded Adhan is omitted pending licensed audio. Quran radio is a later feature
 | Final bundle ES5 syntax | Passed |
 | 18 cities × 4 methods × 12 months, prayer order and finite times | Passed |
 | Next prayer after Isha, sunrise exclusion, Ramadan interval, Hijri boundaries | Passed |
-| Chromium 1080p Arabic layout, remote focus, favorites/reorder/persistence | Passed with mocked Tizen API |
+| Chromium 1080p/720p Arabic layout, remote focus, favorites/reorder/persistence | Passed with mocked Tizen API; RTL scaling origin fixed |
 | Legacy Math fallbacks / corrupt preferences | Passed in browser tests |
 | Clean Git checkout: npm ci, tests, build | Passed independently of sibling projects |
 | Samsung signature | Author/distributor entries, SHA-512 payload digests and local certificate matches verified; TV accepted package |

@@ -8,6 +8,8 @@ dist/
 *.pem
 *.key
 *.csr
+*.crt
+device-profile.xml
 *.wgt
 profiles.xml
 .env*

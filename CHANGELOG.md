@@ -11,5 +11,6 @@
 - ES5 bundle checks, calculation invariants and browser interaction tests.
 - No background services, system Home changes, unlicensed recordings or bundled external fonts.
 - Official Samsung SDK installation and launch accepted on UA49MU7350 / Tizen 3.0 on 2026-11-11; physical confirmation pending.
+- Fixed RTL stage positioning when the TV viewport scales to 1280×720; regression tested at both resolutions.
 
 Hardware evidence is maintained in `docs/compatibility.md`; this entry is not a declaration that physical tests have passed.

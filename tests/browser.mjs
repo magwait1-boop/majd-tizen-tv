@@ -43,5 +43,13 @@ assert.deepEqual(errors,[]);
 await page.evaluate(()=>localStorage.setItem('majd.tv.preferences.v1','{bad'));
 await page.reload();assert.equal(await page.locator('.prayer').count(),6);
 assert.deepEqual(errors,[]);
+await page.setViewportSize({width:1280,height:720});
+const frame=await page.locator('#stage').boundingBox();
+assert.equal(frame.x,0);assert.equal(frame.y,0);assert.equal(frame.width,1280);assert.equal(frame.height,720);
+await page.evaluate(()=>{window.tizen=undefined;});
+await page.getByRole('button',{name:'التطبيقات',exact:true}).click();
+assert.match(await page.locator('#status').textContent(),/تعذر جلب التطبيقات/);
+assert.equal(await page.locator('.prayer').count(),6);
+assert.deepEqual(errors,[]);
 console.log('PASS browser: ES5 fallbacks, Arabic layout, app filtering/launch mock, favorites/reorder/persistence, remote focus, corrupt preferences.');
 }finally{await browser.close();}
