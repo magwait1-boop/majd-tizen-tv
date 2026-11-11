@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.local/
+*.p12
+*.pfx
+*.pri
+*.pwd
+*.pem
+*.key
+*.csr
+*.wgt
+profiles.xml
+.env*

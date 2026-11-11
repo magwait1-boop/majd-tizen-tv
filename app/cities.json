@@ -1,0 +1,164 @@
+[
+  {
+    "id": "cairo",
+    "name": "القاهرة",
+    "country": "مصر",
+    "lat": 30.0444,
+    "lng": 31.2357,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "giza",
+    "name": "الجيزة",
+    "country": "مصر",
+    "lat": 30.0131,
+    "lng": 31.2089,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "alexandria",
+    "name": "الإسكندرية",
+    "country": "مصر",
+    "lat": 31.2001,
+    "lng": 29.9187,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "mansoura",
+    "name": "المنصورة",
+    "country": "مصر",
+    "lat": 31.0409,
+    "lng": 31.3785,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "tanta",
+    "name": "طنطا",
+    "country": "مصر",
+    "lat": 30.7865,
+    "lng": 31.0004,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "portsaid",
+    "name": "بورسعيد",
+    "country": "مصر",
+    "lat": 31.2653,
+    "lng": 32.3019,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "suez",
+    "name": "السويس",
+    "country": "مصر",
+    "lat": 29.9668,
+    "lng": 32.5498,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "asyut",
+    "name": "أسيوط",
+    "country": "مصر",
+    "lat": 27.1783,
+    "lng": 31.1859,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "luxor",
+    "name": "الأقصر",
+    "country": "مصر",
+    "lat": 25.6872,
+    "lng": 32.6396,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "aswan",
+    "name": "أسوان",
+    "country": "مصر",
+    "lat": 24.0889,
+    "lng": 32.8998,
+    "offset": 2,
+    "method": "Egyptian"
+  },
+  {
+    "id": "makkah",
+    "name": "مكة المكرمة",
+    "country": "السعودية",
+    "lat": 21.3891,
+    "lng": 39.8579,
+    "offset": 3,
+    "method": "UmmAlQura"
+  },
+  {
+    "id": "madinah",
+    "name": "المدينة المنورة",
+    "country": "السعودية",
+    "lat": 24.5247,
+    "lng": 39.5692,
+    "offset": 3,
+    "method": "UmmAlQura"
+  },
+  {
+    "id": "riyadh",
+    "name": "الرياض",
+    "country": "السعودية",
+    "lat": 24.7136,
+    "lng": 46.6753,
+    "offset": 3,
+    "method": "UmmAlQura"
+  },
+  {
+    "id": "jeddah",
+    "name": "جدة",
+    "country": "السعودية",
+    "lat": 21.5292,
+    "lng": 39.1611,
+    "offset": 3,
+    "method": "UmmAlQura"
+  },
+  {
+    "id": "dammam",
+    "name": "الدمام",
+    "country": "السعودية",
+    "lat": 26.4333,
+    "lng": 50.1,
+    "offset": 3,
+    "method": "UmmAlQura"
+  },
+  {
+    "id": "taif",
+    "name": "الطائف",
+    "country": "السعودية",
+    "lat": 21.2667,
+    "lng": 40.4167,
+    "offset": 3,
+    "method": "UmmAlQura"
+  },
+  {
+    "id": "tabuk",
+    "name": "تبوك",
+    "country": "السعودية",
+    "lat": 28.3972,
+    "lng": 36.5789,
+    "offset": 3,
+    "method": "UmmAlQura"
+  },
+  {
+    "id": "abha",
+    "name": "أبها",
+    "country": "السعودية",
+    "lat": 18.2167,
+    "lng": 42.5,
+    "offset": 3,
+    "method": "UmmAlQura"
+  }
+]
