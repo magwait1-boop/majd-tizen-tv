@@ -27,8 +27,11 @@ Recorded Adhan is omitted pending licensed audio. Quran radio is a later feature
 | Next prayer after Isha, sunrise exclusion, Ramadan interval, Hijri boundaries | Passed |
 | Chromium 1080p Arabic layout, remote focus, favorites/reorder/persistence | Passed with mocked Tizen API |
 | Legacy Math fallbacks / corrupt preferences | Passed in browser tests |
-| Samsung signature | Pending |
-| Real UA49MU7350 install and run | Pending connection |
+| Clean Git checkout: npm ci, tests, build | Passed independently of sibling projects |
+| Samsung signature | Author/distributor entries, SHA-512 payload digests and local certificate matches verified; TV accepted package |
+| Real UA49MU7350 install and run | 2026-11-11: official SDK reported installation complete and successful launch; SDB reported platform 3.0 |
 | Physical remote, app launch, HDMI picture | Pending owner/device checks |
+
+The television reports system logging disabled. No clean runtime log claim is made. Command-level launch success is distinct from an owner-confirmed screen result. Device addresses, certificate details, signed packages and private evidence remain excluded from this repository.
 
 Modern Chromium testing does not prove M47 compatibility. Hardware results must be recorded separately; do not promote a release to tested beta before device installation and visible checks.
