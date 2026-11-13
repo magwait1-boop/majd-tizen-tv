@@ -12,7 +12,24 @@ if(widget!==path.join(process.cwd(),'dist','widget'))throw new Error('Unexpected
 if(existsSync(widget))rmSync(widget,{recursive:true});
 mkdirSync(widget,{recursive:true});
 cpSync('node_modules/adhan/LICENSE','licenses/Adhan-MIT.txt');
+cpSync('node_modules/moment/LICENSE','licenses/Moment-MIT.txt');
+cpSync('node_modules/moment-timezone/LICENSE','licenses/Moment-Timezone-MIT.txt');
 for(const name of ['index.html','style.css','config.xml']) cpSync('app/'+name,'dist/widget/'+name);
+cpSync('app/quran-verses.json','dist/widget/quran-verses.json');
+cpSync('app/fonts','dist/widget/fonts',{recursive:true});
+mkdirSync('dist/widget/assets/backgrounds',{recursive:true});
+for(const number of [1,2,3,4,5,6]){
+  cpSync('app/assets/backgrounds/'+number+'.jpg','dist/widget/assets/backgrounds/'+number+'.jpg');
+}
+// Explicit, private-only hardware probe. Never use this switch for public artifacts.
+if(process.argv.includes('--diagnostics')){
+  const probe=readFileSync('.local/device-probe.js','utf8');parse(probe,{ecmaVersion:5});
+  const cfg=JSON.parse(readFileSync('.local/diagnostics.json','utf8'));
+  if(!/^http:\/\/192\.168\.\d{1,3}\.\d{1,3}:\d+$/.test(cfg.origin))throw new Error('Probe receiver must be private LAN');
+  writeFileSync('dist/widget/probe.js',probe);
+  writeFileSync('dist/widget/index.html',readFileSync('dist/widget/index.html','utf8').replace('</body>','<script src="probe.js"></script></body>'));
+  writeFileSync('dist/widget/config.xml',readFileSync('dist/widget/config.xml','utf8').replace('<content src=','<access origin="'+cfg.origin+'" subdomains="false"/><content src='));
+}
 writeFileSync('dist/widget/main.js',converted.code);
 cpSync('LICENSE','dist/widget/LICENSE');
 cpSync('licenses','dist/widget/licenses',{recursive:true});

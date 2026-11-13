@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://majd-tv.local/app" version="0.1.0" viewmodes="maximized">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://majd-tv.local/app" version="0.2.1" viewmodes="maximized">
 <tizen:application id="SETZfpkE27.MajdTV" package="SETZfpkE27" required_version="3.0"/>
+<access origin="https://api.open-meteo.com" subdomains="false"/><access origin="https://geocoding-api.open-meteo.com" subdomains="false"/><access origin="https://api.ip.sb" subdomains="false"/>
+<tizen:privilege name="http://tizen.org/privilege/internet"/>
+<access origin="https://www.mp3quran.net" subdomains="false"/><access origin="https://qurango.net" subdomains="true"/>
 <content src="index.html"/><name>MAJD TV</name>
 <tizen:profile name="tv-samsung"/>
 <tizen:privilege name="http://tizen.org/privilege/application.launch"/>

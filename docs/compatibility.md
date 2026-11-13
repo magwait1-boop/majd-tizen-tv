@@ -1,5 +1,7 @@
 # Tizen 3.0 compatibility and evidence
 
+The sections below record the v0.1 baseline. Version 0.2 changes location, DST, weather, language and radio behavior: see [0.2 test evidence](testing-v020.md) and [services](services.md). Do not treat the v0.1 installation as proof of the v0.2 network features.
+
 Target: Samsung UA49MU7350 (2017), Tizen 3.0, 1920×1080. Samsung documents Chromium M47 for 2017 TVs in its [web engine table](https://developer.samsung.com/smarttv/develop/specifications/web-engine-specifications.html).
 
 ## Implementation choices

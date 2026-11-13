@@ -1,7 +1,9 @@
 import { PrayerTimes, Coordinates, CalculationMethod, Madhab } from 'adhan';
+import {offsetAt,localParts} from './location.js';
 export const names = ['الفجر','الشروق','الظهر','العصر','المغرب','العشاء'];
-export const methods = ['UmmAlQura','Egyptian','MuslimWorldLeague','Karachi'];
-export const methodNames = ['أم القرى','الهيئة المصرية للمساحة','رابطة العالم الإسلامي','كراتشي'];
+export const methods = ['UmmAlQura','Egyptian','MuslimWorldLeague','Karachi','NorthAmerica','Dubai','Kuwait','Qatar','Singapore','Turkey','MoonsightingCommittee'];
+export const methodNames = ['أم القرى','الهيئة المصرية للمساحة','رابطة العالم الإسلامي','كراتشي','أمريكا الشمالية','دبي','الكويت','قطر','سنغافورة','تركيا','لجنة رؤية الهلال'];
+export const englishNames=['Fajr','Sunrise','Dhuhr','Asr','Maghrib','Isha'];
 export function civil(now, offset) {
   var d = new Date(now.getTime() + offset * 3600000);
   return new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), 12);
@@ -15,15 +17,19 @@ export function hijri(date, adjustment) {
   return {year:year,month:month,day:Math.round(jd-first(year,month)+1)};
 }
 export function schedule(now, city, prefs) {
-  var day=civil(now,prefs.offset), params=CalculationMethod[prefs.method]();
-  params.madhab=prefs.hanafi ? Madhab.Hanafi : Madhab.Shafi;
+  var offset=city.timezone?offsetAt(now,city):prefs.offset;
+  var day=civil(now,offset);
   var evening=new Date(day); evening.setDate(day.getDate()+1);
-  if(prefs.method==='UmmAlQura' && hijri(evening,prefs.hijriOffset).month===9) params.ishaInterval=120;
-  function at(d){var p=new PrayerTimes(new Coordinates(city.lat,city.lng),d,params);return [p.fajr,p.sunrise,p.dhuhr,p.asr,p.maghrib,p.isha];}
-  var times=at(day), next=-1;
-  times.forEach(function(t,i){if(next<0 && i!==1 && t>now) next=i;});
-  var when=next>=0?times[next]:null;
-  if(next<0){next=0;when=at(evening)[0];}
+  function at(d){
+    var params=CalculationMethod[prefs.method]();params.madhab=prefs.hanafi?Madhab.Hanafi:Madhab.Shafi;
+    var hd=new Date(d);hd.setDate(hd.getDate()+1);
+    if(prefs.method==='UmmAlQura'&&hijri(hd,prefs.hijriOffset).month===9)params.ishaInterval=120;
+    var p=new PrayerTimes(new Coordinates(city.lat,city.lng),d,params);
+    return [p.fajr,p.sunrise,p.dhuhr,p.asr,p.maghrib,p.isha].map(function(t,i){return new Date(+t+((prefs.adjustments||[])[i]||0)*60000);});
+  }
+  var times=at(day),next=-1,when=null;
+  var previous=new Date(day);previous.setDate(previous.getDate()-1);
+  [at(previous),times,at(evening)].forEach(function(list){list.forEach(function(t,i){if(i!==1&&isFinite(+t)&&t>now&&(!when||t<when)){next=i;when=t;}});});
   var hd=new Date(day); if(now>=times[4]) hd.setDate(hd.getDate()+1);
-  return {times:times,next:next,when:when,hijri:hijri(hd,prefs.hijriOffset),day:day};
+  return {times:times,next:next,when:when,hijri:hijri(hd,prefs.hijriOffset),day:day,incomplete:times.some(function(t){return !isFinite(+t);})};
 }

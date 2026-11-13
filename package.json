@@ -1,1 +1,24 @@
-{"name":"majd-tizen-tv","version":"0.1.0","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","test":"node --test tests/*.test.mjs","preview":"node scripts/preview.mjs"},"dependencies":{"adhan":"4.4.3"},"devDependencies":{"@babel/core":"7.28.5","@babel/preset-env":"7.28.5","esbuild":"0.25.12","acorn":"8.15.0","fflate":"0.8.2","playwright":"1.56.1"}}
+{
+  "name": "majd-tizen-tv",
+  "version": "0.2.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "dependencies": {
+    "adhan": "4.4.3",
+    "moment": "2.31.0",
+    "moment-timezone": "0.6.6"
+  },
+  "devDependencies": {
+    "@babel/core": "7.28.5",
+    "@babel/preset-env": "7.28.5",
+    "acorn": "8.15.0",
+    "esbuild": "0.25.12",
+    "fflate": "0.8.2",
+    "playwright": "1.56.1"
+  }
+}

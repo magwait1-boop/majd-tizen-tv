@@ -1,0 +1,62 @@
+[
+  {
+    "city": "riyadh",
+    "method": "UmmAlQura",
+    "date": "2026-11-11",
+    "source": "https://api.aladhan.com/v1/timings/11-11-2026?latitude=24.7136&longitude=46.6753&method=4&school=0&timezonestring=Asia%2FRiyadh",
+    "reference": [
+      "04:46",
+      "06:07",
+      "11:37",
+      "14:46",
+      "17:08",
+      "18:38"
+    ],
+    "actual": [
+      "04:46",
+      "06:07",
+      "11:37",
+      "14:45",
+      "17:08",
+      "18:38"
+    ],
+    "deltaMinutes": [
+      0,
+      0,
+      0,
+      -1,
+      0,
+      0
+    ]
+  },
+  {
+    "city": "cairo",
+    "method": "Egyptian",
+    "date": "2026-11-11",
+    "source": "https://api.aladhan.com/v1/timings/11-11-2026?latitude=30.0444&longitude=31.2357&method=5&school=0&timezonestring=Africa%2FCairo",
+    "reference": [
+      "04:48",
+      "06:17",
+      "11:39",
+      "14:40",
+      "17:01",
+      "18:21"
+    ],
+    "actual": [
+      "04:48",
+      "06:17",
+      "11:40",
+      "14:39",
+      "17:01",
+      "18:21"
+    ],
+    "deltaMinutes": [
+      0,
+      0,
+      1,
+      -1,
+      0,
+      0
+    ]
+  }
+]

@@ -2,7 +2,7 @@
 
 ## Source build
 
-Clone this repository alone. Install Node.js 20+ and run:
+Clone this repository alone. Install Node.js 20.19+ and run:
 
 ```sh
 npm ci
@@ -10,7 +10,7 @@ npm test
 npm run build
 ```
 
-`dist/widget/` contains the standalone web payload; `dist/MAJD-TV-unsigned.wgt` is a ZIP widget ready for signing. `app/` is source, `scripts/` is computer-only tooling. No sibling checkout is required. Edit `app/style.css` for design, `app/main.js` for behavior and `app/prayer.js` for calculations. Rebuild after edits. Run browser tests as described in README. Tests must pass before tagging a release.
+`dist/widget/` contains the standalone web payload; `dist/MAJD-TV-unsigned.wgt` is a ZIP widget ready for signing. `app/` is source, `scripts/` is computer-only tooling. No sibling checkout is required. Edit `app/style.css` for design, `app/dashboard.js` for behavior and `app/prayer.js` for calculations. Rebuild after edits. Run browser tests as described in README. Tests must pass before tagging a release.
 
 ## Samsung signing
 
@@ -52,3 +52,9 @@ Check the screen and remote arrows/OK/Back, change city, verify times against th
 Keep `SETZfpkE27.MajdTV`, package `SETZfpkE27`, and your original author certificate for in-place MAJD TV updates. Increment widget version in `app/config.xml` and package.json, run tests/build, sign and install. Preserve the author certificate offline securely. For a separately named fork installed alongside MAJD TV, generate a fresh application identity with the Samsung SDK and update config and verifier expectations deliberately.
 
 لا تضع كلمات المرور أو شهادات p12 أو ملفات profiles.xml أو DUID أو عناوين الأجهزة في Git. `.local/` و`dist/` مستبعدان؛ لا تستخدم `git add -f` لهما. الشهادة لا تنتقل مع GitHub؛ كل مطور يستخدم ملف توقيعه الخاص.
+
+## Version 0.2 updates
+
+Do not clear localStorage or uninstall to update. The original preference key is retained; the migration preserves city, method, night mode and favorite order, maps known cities to IANA zones, and leaves all network consent disabled until explicitly enabled. Backups of the previous signed package and Git source are kept privately in `.local/backups/`.
+
+Update only this application with the same identity and author certificate. Rollback by signing the saved source with that certificate; retain a private preference backup before downgrading. Older versions do not understand custom global locations, so a downgrade can require selecting an old preset city again.
